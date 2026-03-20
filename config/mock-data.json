@@ -1,0 +1,254 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Manager",
+      "email": "john@example.com",
+      "password": "$2a$10$r9Xy5Jf6h7k8l9m0n1o2p3q4r5s6t7u8v9w0x1y2z3a4b5c6d7e8f9g0h1i",
+      "role": "manager",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 2,
+      "name": "Jane Tenant",
+      "email": "jane@example.com",
+      "password": "$2a$10$r9Xy5Jf6h7k8l9m0n1o2p3q4r5s6t7u8v9w0x1y2z3a4b5c6d7e8f9g0h1i",
+      "role": "tenant",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 3,
+      "name": "Test Tenant",
+      "email": "test@example.com",
+      "password": "$2a$10$q3QZCebEChPog3w/89cK8uwevkz4ZsgFS6RRDni74YOkhFMkXVdcO",
+      "role": "tenant",
+      "created_at": "2026-02-24T14:38:06.059Z",
+      "updated_at": "2026-02-24T14:38:06.059Z"
+    },
+    {
+      "id": 4,
+      "name": "iyonicorp",
+      "email": "iyonicorp@gmail.com",
+      "password": "$2a$10$5.kCSib04Q1QnfW.Iz1aWOTPHIdDEFQj1oF2D9vKpvwHtt6O3O6My",
+      "role": "tenant",
+      "created_at": "2026-03-07T06:57:25.959Z",
+      "updated_at": "2026-03-07T06:57:25.959Z"
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "manager_id": 1,
+      "name": "Azure Modern Apartment",
+      "address": "Kilimani, Nairobi",
+      "type": "rental",
+      "monthly_rent": 45000,
+      "daily_rate": null,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "sqft": 1250,
+      "images": [
+        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "A sophisticated 2-bedroom sanctuary in the heart of Kilimani. Features floor-to-ceiling windows, premium finishing, and panoramic city views.",
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 2,
+      "manager_id": 1,
+      "name": "The Westlands Studio",
+      "address": "Westlands, Nairobi",
+      "type": "airbnb",
+      "monthly_rent": null,
+      "daily_rate": 3500,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 600,
+      "images": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Chic and minimalist studio perfect for modern professionals. Nestled in Westlands with easy access to Nairobi's best social spots.",
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 3,
+      "manager_id": 1,
+      "name": "Majestic Karen Villa",
+      "address": "Karen, Nairobi",
+      "type": "airbnb",
+      "monthly_rent": null,
+      "daily_rate": 15000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "sqft": 4500,
+      "images": [
+        "https://img.jamesedition.com/listing_images/2025/09/18/07/24/55/d271b059-1458-41c5-b19d-eeb190f3a448/je/760x470xc.jpg"
+      ],
+      "description": "An architectural masterpiece in Karen. This expansive 4-bedroom villa offers ultimate privacy, a private infinity pool, and lush gardens.",
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 4,
+      "manager_id": 1,
+      "name": "Nyali Sands Beach House",
+      "address": "Nyali, Mombasa",
+      "type": "airbnb",
+      "monthly_rent": null,
+      "daily_rate": 10000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "sqft": 2800,
+      "images": [
+        "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Breathtaking ocean-front residence in Nyali. Experience the gentle sound of waves and direct access to white sandy beaches.",
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 5,
+      "manager_id": 1,
+      "name": "Skyline Executive Loft",
+      "address": "CBD, Nairobi",
+      "type": "rental",
+      "monthly_rent": 35000,
+      "daily_rate": null,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 950,
+      "images": [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Industrial-chic loft in the heart of the city. High ceilings, exposed brick, and state-of-the-art appliances for the urban elite.",
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    },
+    {
+      "id": 6,
+      "manager_id": 1,
+      "name": "Mt. Kenya Serenity Cabin",
+      "address": "Nanyuki",
+      "type": "airbnb",
+      "monthly_rent": null,
+      "daily_rate": 8000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "sqft": 1100,
+      "images": [
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "A tranquil escape in Nanyuki. Rustic yet elegant cabin with spectacular views of Mt. Kenya's peaks. Perfect for nature lovers.",
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.959Z",
+      "updated_at": "2026-02-24T14:27:37.959Z"
+    }
+  ],
+  "tenants": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "property_id": 1,
+      "move_in_date": "2024-01-01T00:00:00.000Z",
+      "move_out_date": null,
+      "status": "active",
+      "created_at": "2026-02-24T14:27:37.960Z",
+      "updated_at": "2026-02-24T14:27:37.960Z"
+    },
+    {
+      "id": 2,
+      "user_id": 4,
+      "property_id": 2,
+      "move_out_date": null,
+      "status": "active",
+      "created_at": "2026-03-07T07:29:17.518Z",
+      "updated_at": "2026-03-07T07:29:17.518Z",
+      "move_in_date": null
+    }
+  ],
+  "bills": [
+    {
+      "id": 1,
+      "tenant_id": 1,
+      "property_id": 1,
+      "amount": 45000,
+      "due_date": "2024-12-01T00:00:00.000Z",
+      "paid_date": null,
+      "status": "pending",
+      "type": "rent",
+      "description": "November Rent",
+      "created_at": "2026-02-24T14:27:37.960Z",
+      "updated_at": "2026-02-24T14:27:37.960Z"
+    },
+    {
+      "id": 2,
+      "tenant_id": 1,
+      "property_id": 1,
+      "amount": 4500,
+      "due_date": "2024-12-15T00:00:00.000Z",
+      "paid_date": null,
+      "status": "pending",
+      "type": "electricity",
+      "description": "Electricity Bill",
+      "created_at": "2026-02-24T14:27:37.960Z",
+      "updated_at": "2026-02-24T14:27:37.960Z"
+    },
+    {
+      "id": 3,
+      "tenant_id": 1,
+      "property_id": 1,
+      "amount": 2500,
+      "due_date": "2024-12-20T00:00:00.000Z",
+      "paid_date": "2024-12-18T00:00:00.000Z",
+      "status": "paid",
+      "type": "water",
+      "description": "Water Bill",
+      "created_at": "2026-02-24T14:27:37.960Z",
+      "updated_at": "2026-02-24T14:27:37.960Z"
+    }
+  ],
+  "stays": [
+    {
+      "id": 1,
+      "tenant_id": 1,
+      "property_id": 2,
+      "check_in_date": "2024-12-25T00:00:00.000Z",
+      "check_out_date": "2024-12-30T00:00:00.000Z",
+      "total_amount": 17500,
+      "status": "confirmed",
+      "created_at": "2026-02-24T14:27:37.960Z",
+      "updated_at": "2026-02-24T14:27:37.960Z"
+    },
+    {
+      "id": 2,
+      "tenant_id": 1,
+      "property_id": 3,
+      "check_in_date": "2025-01-15T00:00:00.000Z",
+      "check_out_date": "2025-01-20T00:00:00.000Z",
+      "total_amount": 75000,
+      "status": "confirmed",
+      "created_at": "2026-02-24T14:27:37.960Z",
+      "updated_at": "2026-02-24T14:27:37.960Z"
+    },
+    {
+      "id": 3,
+      "tenant_id": 2,
+      "property_id": 1,
+      "check_in_date": "2026-03-07",
+      "check_out_date": "2026-04-08",
+      "total_amount": 48000,
+      "status": "confirmed",
+      "created_at": "2026-03-07T08:35:48.881Z",
+      "updated_at": "2026-03-07T08:35:48.881Z"
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Property Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css?v=1.1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-building"></i>
+                    <h2>Property Manager</h2>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <span class="nav-label">Main</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#dashboard" class="nav-link">
+                                <i class="fas fa-th-large"></i>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-label">Management</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#properties" class="nav-link">
+                                <i class="fas fa-building"></i>
+                                <span>Properties</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tenants" class="nav-link">
+                                <i class="fas fa-user-friends"></i>
+                                <span>Tenants</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-label">Financials</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#bills" class="nav-link">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                <span>Billing</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#stays" class="nav-link">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Bookings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-label">Analytics</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#reports" class="nav-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#settings" class="nav-link">
+                                <i class="fas fa-sliders-h"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <h4 id="userName">John Doe</h4>
+                        <p id="userRole">Manager</p>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation -->
+            <header class="top-nav">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search properties, tenants, bills...">
+                </div>
+                <div class="top-actions">
+                    <button class="btn-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="btn-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">5</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content">
+                <!-- Dashboard Overview -->
+                <section class="dashboard-overview" id="dashboard">
+                    <div class="page-header">
+                        <div class="header-greeting">
+                            <h1>Welcome back, <span id="welcomeName">John Doe</span>! 👋</h1>
+                            <p>Here's a summary of your property portfolio performance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="stat-trend">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+12%</span>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h3 id="totalProperties">0</h3>
+                                <p>Total Properties</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" style="color: var(--secondary); background: rgba(16, 185, 129, 0.1);">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-trend">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+8%</span>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h3 id="totalTenants">0</h3>
+                                <p>Active Tenants</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" style="color: var(--accent); background: rgba(245, 158, 11, 0.1);">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <div class="stat-trend negative">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <span>-5%</span>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h3 id="pendingBills">0</h3>
+                                <p>Pending Bills</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon" style="color: var(--info); background: rgba(59, 130, 246, 0.1);">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div class="stat-trend">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+15%</span>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h3 id="totalRevenue">KES 0</h3>
+                                <p>Total Revenue</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="recent-activity">
+                        <div class="card-header">
+                            <h2>Recent Activity</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="activity-list" id="activityList">
+                            <!-- Activity items will be dynamically loaded -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Properties Section -->
+                <section class="properties-section hidden" id="properties">
+                    <div class="page-header">
+                        <h1>My Properties</h1>
+                        <button class="btn btn-primary" id="addPropertyBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Property
+                        </button>
+                    </div>
+
+                    <div class="properties-list" id="propertiesList">
+                        <!-- Properties will be dynamically loaded -->
+                    </div>
+                </section>
+
+                <!-- Tenants Section -->
+                <section class="tenants-section hidden" id="tenants">
+                    <div class="page-header">
+                        <h1>Tenant Management</h1>
+                        <button class="btn btn-primary" id="addTenantBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Tenant
+                        </button>
+                    </div>
+
+                    <div class="tenants-list" id="tenantsList">
+                        <!-- Tenants will be dynamically loaded -->
+                    </div>
+                </section>
+
+                <!-- Bills Section -->
+                <section class="bills-section hidden" id="bills">
+                    <div class="page-header">
+                        <h1>Bill Management</h1>
+                        <button class="btn btn-primary" id="addBillBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Bill
+                        </button>
+                    </div>
+
+                    <div class="bills-list" id="billsList">
+                        <!-- Bills will be dynamically loaded -->
+                    </div>
+                </section>
+
+                <!-- Bookings Section -->
+                <section class="stays-section hidden" id="stays">
+                    <div class="page-header">
+                        <h1>Airbnb Bookings</h1>
+                        <button class="btn btn-primary" id="sendRemindersBtn">
+                            <i class="fas fa-bell"></i>
+                            Send Reminders
+                        </button>
+                    </div>
+
+                    <div class="stays-list" id="staysList">
+                        <!-- Bookings will be dynamically loaded -->
+                    </div>
+                </section>
+
+                <!-- Reports Section -->
+                <section class="reports-section hidden" id="reports">
+                    <div class="page-header">
+                        <h1>Reports & Analytics</h1>
+                        <button class="btn btn-primary" id="generateReportBtn">
+                            <i class="fas fa-file-export"></i>
+                            Generate Report
+                        </button>
+                    </div>
+
+                    <div class="reports-container">
+                        <div class="report-card">
+                            <h3>Revenue Report</h3>
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Monthly Revenue Overview</p>
+                            </div>
+                        </div>
+                        <div class="report-card">
+                            <h3>Occupancy Report</h3>
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>Property Occupancy Rates</p>
+                            </div>
+                        </div>
+                        <div class="report-card">
+                            <h3>Billing Report</h3>
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>Bill Payment Status</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section class="settings-section hidden" id="settings">
+                    <div class="page-header">
+                        <h1>Settings</h1>
+                    </div>
+
+                    <div class="settings-container">
+                        <div class="settings-section">
+                            <h2>Profile Settings</h2>
+                            <form class="settings-form" id="profileForm">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" id="settingsName" value="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="settingsEmail" value="john@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" id="settingsPhone" value="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save"></i>
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="settings-section">
+                            <h2>Account Settings</h2>
+                            <form class="settings-form" id="passwordForm">
+                                <div class="form-group">
+                                    <label>Current Password</label>
+                                    <input type="password" id="currentPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <input type="password" id="newPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" id="confirmPassword">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-lock"></i>
+                                        Change Password
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="settings-section">
+                            <h2>Notifications</h2>
+                            <div class="notification-settings">
+                                <div class="notification-item">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        Email notifications for new bookings
+                                    </label>
+                                </div>
+                                <div class="notification-item">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        SMS notifications for bill reminders
+                                    </label>
+                                </div>
+                                <div class="notification-item">
+                                    <label>
+                                        <input type="checkbox">
+                                        Weekly property reports
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="propertyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="propertyModalTitle">Add Property</h3>
+                <button class="close-btn" id="closePropertyModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="property-form" id="propertyForm">
+                    <input type="hidden" id="propertyId">
+                    <div class="form-group">
+                        <label>Property Name</label>
+                        <input type="text" id="propertyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea id="propertyAddress" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select id="propertyType" required>
+                            <option value="">Select type</option>
+                            <option value="rental">Rental</option>
+                            <option value="airbnb">Airbnb</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label id="priceLabel">Monthly Rent</label>
+                        <input type="number" id="propertyPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="propertyDescription" rows="4"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelPropertyBtn">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            Save Property
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="tenantModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="tenantModalTitle">Add Tenant</h3>
+                <button class="close-btn" id="closeTenantModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="tenant-form" id="tenantForm">
+                    <div class="form-group">
+                        <label>Tenant Name</label>
+                        <input type="text" id="tenantName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="tenantEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Property</label>
+                        <select id="tenantProperty" required>
+                            <option value="">Select property</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Move-in Date</label>
+                        <input type="date" id="moveInDate" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelTenantBtn">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            Save Tenant
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="billModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="billModalTitle">Add Bill</h3>
+                <button class="close-btn" id="closeBillModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="bill-form" id="billForm">
+                    <div class="form-group">
+                        <label>Tenant</label>
+                        <select id="billTenant" required>
+                            <option value="">Select tenant</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Property</label>
+                        <select id="billProperty" required>
+                            <option value="">Select property</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" id="billAmount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <input type="date" id="billDueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Bill Type</label>
+                        <select id="billType" required>
+                            <option value="">Select type</option>
+                            <option value="rent">Rent</option>
+                            <option value="water">Water</option>
+                            <option value="electricity">Electricity</option>
+                            <option value="internet">Internet</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="billDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelBillBtn">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            Save Bill
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="manager-dashboard.js"></script>
+</body>
+</html>

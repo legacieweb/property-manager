@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-crown"></i>
+                <h1>Majestic Properties</h1>
+            </a>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Sign In</button>
+                    <button class="btn btn-primary" id="registerBtn">Join Now</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Smart Property Management</h2>
+                    <p class="hero-subtitle">Streamline your property management with our modern, intuitive platform. Manage rentals and Airbnbs efficiently from a single dashboard.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" id="getStartedBtn">Get Started</button>
+                        <button class="btn btn-outline btn-large" id="learnMoreBtn">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="services">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Property Management</h3>
+                        <p>Effortlessly manage all your properties from a single dashboard. Track maintenance, payments, and tenant information.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Tenant Management</h3>
+                        <p>Complete tenant lifecycle management from application to move-out. Keep track of tenant information, leases, and communications.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <h3>Billing & Payments</h3>
+                        <p>Automated billing, online payments, and detailed financial reporting. Stay on top of your cash flow.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Calendar Management</h3>
+                        <p>Track bookings, maintenance schedules, and important dates with our integrated calendar system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Analytics & Reports</h3>
+                        <p>Get insights into your property performance with comprehensive reports and analytics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Access</h3>
+                        <p>Manage your properties on the go with our responsive design and mobile-friendly interface.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Section -->
+        <section class="properties" id="properties">
+            <div class="container">
+                <h2 class="section-title">Our Properties</h2>
+                <div class="properties-filter">
+                    <button class="filter-btn active" data-filter="all">All Properties</button>
+                    <button class="filter-btn" data-filter="rental">Rentals</button>
+                    <button class="filter-btn" data-filter="airbnb">Airbnbs</button>
+                </div>
+                <div class="properties-grid" id="propertiesGrid">
+                    <!-- Properties will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://numarealestate.co.ke/wp-content/uploads/2025/10/Riverside_20250914_211310_4-592x444.jpg" alt="Luxury Kenyan Home">
+                    </div>
+                    <div class="about-text">
+                        <span class="property-type">Our Legacy</span>
+                        <h2>Redefining Living Spaces Across Kenya</h2>
+                        <p>At Majestic Properties, we don't just manage buildings; we curate premium living experiences. From the cosmopolitan energy of Kilimani to the serene landscapes of Nanyuki, we represent the pinnacle of Kenyan property management.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>500+</h3>
+                                <p>Premium Units</p>
+                            </div>
+                            <div class="stat">
+                                <h3>98%</h3>
+                                <p>Retention Rate</p>
+                            </div>
+                            <div class="stat">
+                                <h3>24/7</h3>
+                                <p>Elite Support</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Discover More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>123 Property Street, Kilimani, Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+254 (0) 700 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@propertymanager.co.ke</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <div class="logo" style="color: white; margin-bottom: 1.5rem;">
+                        <i class="fas fa-crown"></i>
+                        <h1>Majestic</h1>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Setting the standard for luxury property management in East Africa since 2010.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Concierge</h4>
+                    <ul>
+                        <li><a href="#">Tenant Portal</a></li>
+                        <li><a href="#">Management Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Nairobi Office</h4>
+                    <ul>
+                        <li><a href="tel:+254700123456">+254 700 123 456</a></li>
+                        <li><a href="mailto:concierge@majestic.co.ke">concierge@majestic.co.ke</a></li>
+                        <li><p style="color: rgba(255,255,255,0.7);">Kilimani Business Center, Suite 402</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Majestic Properties Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Login/Register -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" style="font-family: 'Playfair Display', serif;">Welcome Back</h2>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Login Form -->
+                <form class="auth-form" id="loginForm">
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Access your exclusive property portfolio.</p>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <input type="email" name="email" placeholder="Email Address" required style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-secondary);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <input type="password" name="password" placeholder="Password" required style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-secondary);">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="padding: 1rem; margin-bottom: 1.5rem;">Sign In</button>
+                    <p class="auth-switch">
+                        New to Majestic? <a href="#" id="switchToRegister" style="color: var(--primary-color); font-weight: 600;">Apply for an account</a>
+                    </p>
+                </form>
+
+                <!-- Register Form -->
+                <form class="auth-form hidden" id="registerForm">
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Join Kenya's most elite property network.</p>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <input type="text" name="name" placeholder="Full Name" required style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-secondary);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <input type="email" name="email" placeholder="Email Address" required style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-secondary);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <input type="password" name="password" placeholder="Password" required style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-secondary);">
+                    </div>
+                    <div class="form-options" style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="role" value="tenant" checked style="accent-color: var(--primary-color);"> Tenant
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="role" value="manager" style="accent-color: var(--primary-color);"> Manager
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="padding: 1rem; margin-bottom: 1.5rem;">Register Now</button>
+                    <p class="auth-switch">
+                        Already a member? <a href="#" id="switchToLogin" style="color: var(--primary-color); font-weight: 600;">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
