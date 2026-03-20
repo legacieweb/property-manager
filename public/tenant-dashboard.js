@@ -1,5 +1,5 @@
 // Tenant Dashboard JavaScript
-const API_URL = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
+const API_URL = window.location.protocol === 'file:' ? 'https://property-manager-jlza.onrender.com' : '';
 let currentUser = null;
 let tenantData = null;
 let selectedBill = null;
